@@ -40,3 +40,37 @@ models:
         description: "ID único do usuário"
         tests:
           - not_null
+  
+  - name: stg_order_items
+    description: "Staging de itens dos pedidos"
+    columns:
+      - name: order_item_id
+        description: "ID único do item dentro do pedido"
+        tests:
+          - unique
+          - not_null
+      - name: order_id
+        description: "ID único do pedido"
+        tests:
+          - not_null
+      - name: product_id
+        description: "ID único do produto"
+        tests:
+          - not_null
+      - name: inventory_item_id
+        description: "ID único do item no inventário"
+        tests:
+          - not_null
+
+  - name: mart_order_details
+    description: "Mart com detalhes dos pedidos"
+    columns:
+      - name: order_item_id
+        description: "ID único do item do pedido"
+        tests:
+          - unique
+          - not_null
+      - name: order_id
+        description: "ID único do pedido"
+        tests:
+          - not_null
