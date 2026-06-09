@@ -1,0 +1,42 @@
+version: 2
+
+models:
+  - name: stg_orders
+    description: "Staging de orders bruto"
+    columns:
+      - name: order_id
+        description: "ID único do pedido"
+        tests:
+          - unique
+          - not_null
+
+  - name: mart_orders
+    description: "Mart com orders transformados"
+    columns:
+      - name: order_id
+        description: "ID único do pedido"
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_users
+    description: "Staging de users bruto"
+    columns:
+      - name: user_id
+        description: "ID único do usuário"
+        tests:
+          - unique
+          - not_null
+
+  - name: mart_user_orders
+    description: "Mart com usuarios e pedidos combinados"
+    columns:
+      - name: order_id
+        description: "ID único do pedido"
+        tests:
+          - unique
+          - not_null
+      - name: user_id
+        description: "ID único do usuário"
+        tests:
+          - not_null
